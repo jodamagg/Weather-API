@@ -1,0 +1,81 @@
+header {
+  background-color: blue;
+  text-align: center;
+  height: 100px;
+  width: 100%;
+  color: white;
+  font-weight: bolder;
+}
+
+#page-title {
+  padding: 20px;
+  margin: auto;
+}
+
+#search-button {
+  width: 100%;
+}
+
+.list-group-item {
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
+
+#weather-box {
+  height: 400px;
+  width: 60%;
+  border: black solid 2px;
+  margin-top: 20px;
+  margin-left: 20px;
+  display: none;
+}
+
+.format-headline {
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.list-item {
+  background-color: gray;
+  color: white;
+  text-align: center;
+  border: black 1px dashed;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.fcst-box {
+  border: black solid 2px;
+  width: 60%;
+  margin-left: 40px;
+  flex-direction: row;
+}
+
+.fcst-card {
+  background: navy;
+  color: white;
+  border: white solid 2px;
+  max-width: 200px;
+}
+
+.fcst-icon {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.container {
+  display: none;
+}
+
+.uv-low {
+  background-color: darkseagreen;
+}
+
+.uv-moderate {
+  background-color: yellow;
+}
+
+.uv-high {
+  background-color: red;
+}
