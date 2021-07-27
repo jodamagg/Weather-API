@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="Assets/CSS/style.css" />
+  </head>
+  <body>
+  <header id="style-header">
+    <h1 id="page-title">Weather Dashboard</h1>
+  </header>
+  <main class="container-fluid">
+    <div class="row">
+      <div class="card">
+        <h3 class="card-header">Search for a City</h3>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="city-input"
+                aria-describedby="cityInput"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="search-button">
+              Search
+            </button>
+          </form>
+          <ul class="list-group list-group-flush" id="city-list"></ul>
+        </div>
+      </div>
+      <section id="weather-box">
+        <p><span  class = "format-headline" id="city-name"></span><span id = "current-date" class="format-headline"></span><img id="big-icon"></span></p>
+        <p>Temp: <span id="temp"></span>° F</p>
+        <p>Wind: <span id="wind"></span> MPH</p>
+        <p>Humidity: <span id="humidity"></span>%</p>
+        <p>UV: <span id="UV"></span></p>
+      </section>
+      
+      <section class="container" id="big-container">
+        <h1>5 Day Forecast:</h1>
+        <section class="row"> 
+          <section class="col-sm-12 col-md-2 col-lg-2 card fcst-card">
+            <p id = "day-1-date">Date</p>
+            <img class = "fcst-icon" id = "fcstIcon1">
+            <p>Temp: <span id="day-1-temp"></span>°F</p>
+            <p>Wind: <span id ="day-1-wind"></span> MPH</p>
+            <p>Humidity: <span id="day-1-hum"></span>%</p>
+          </section>
+          <section class="col-sm-12 col-md-2 col-lg-2 card fcst-card">
+            <p id = "day-2-date">Date</p>
+            <img class = "fcst-icon" id = "fcstIcon2">
+            <p >Temp: <span id="day-2-temp"></span>°F</p>
+            <p>Wind: <span id ="day-2-wind"></span> MPH</p>
+            <p>Humidity: <span id="day-2-hum"></span>%</p>
+          </section>
+          <section class="col-sm-12 col-md-2 col-lg-2 card fcst-card">
+            <p id = "day-3-date">Date</p>
+              <img class = "fcst-icon" id = "fcstIcon3">
+              <p >Temp: <span id="day-3-temp"></span>°F</p>
+              <p>Wind: <span id ="day-3-wind"></span> MPH</p>
+              <p>Humidity: <span id="day-3-hum"></span>%</p>
+          </section>
+          <section class="col-sm-12 col-md-2 col-lg-2 card fcst-card">
+            <p id = "day-4-date">Date</p>
+            <img class = "fcst-icon" id = "fcstIcon4">
+            <p >Temp: <span id="day-4-temp"></span>°F</p>
+            <p>Wind: <span id ="day-4-wind"></span> MPH</p>
+            <p>Humidity: <span id="day-4-hum"></span>%</p>
+          </section>
+          <section class="col-sm-12 col-md-2 col-lg-2 card fcst-card">
+            <p id = "day-5-date">Date</p>
+            <img class = "fcst-icon" id = "fcstIcon5">
+            <p >Temp: <span id="day-5-temp"></span>°F</p>
+            <p>Wind: <span id ="day-5-wind"></span> MPH</p>
+            <p>Humidity: <span id="day-5-hum"></span>%</p>
+          </section>
+          </section>
+      </div>
+      <!-- <section class="col-12" id="fcst-box">
+        <h3>Five Day Forecast:</h3>
+        <section class="card fcst-card">
+          <p id = "day-1-date">Date</p>
+          <img class = "fcst-icon" id = "fcstIcon1">
+          <p>Temp: <span id="day-1-temp"></span>°F</p>
+          <p>Wind: <span id ="day-1-wind"></span> MPH</p>
+          <p>Humidity: <span id="day-1-hum"></span>%</p>
+          <section class="card fcst-card">
+            <p id = "day-2-date">Date</p>
+            <img class = "fcst-icon" id = "fcstIcon2">
+            <p >Temp: <span id="day-2-temp"></span>°F</p>
+            <p>Wind: <span id ="day-2-wind"></span> MPH</p>
+            <p>Humidity: <span id="day-2-hum"></span>%</p>
+            <section class="card fcst-card">
+              <p id = "day-3-date">Date</p>
+              <img class = "fcst-icon" id = "fcstIcon3">
+              <p >Temp: <span id="day-3-temp"></span>°F</p>
+              <p>Wind: <span id ="day-3-wind"></span> MPH</p>
+              <p>Humidity: <span id="day-3-hum"></span>%</p>
+              <section class="card fcst-card">
+                <p id = "day-4-date">Date</p>
+                <img class = "fcst-icon" id = "fcstIcon4">
+                <p >Temp: <span id="day-4-temp"></span>°F</p>
+                <p>Wind: <span id ="day-4-wind"></span> MPH</p>
+                <p>Humidity: <span id="day-4-hum"></span>%</p>
+                <section class="card fcst-card">
+                  <p id = "day-5-date">Date</p>
+                  <img class = "fcst-icon" id = "fcstIcon5">
+                  <p >Temp: <span id="day-5-temp"></span>°F</p>
+                  <p>Wind: <span id ="day-5-wind"></span> MPH</p>
+                  <p>Humidity: <span id="day-5-hum"></span>%</p>
+                </section>
+              </section>
+            </section>
+          </section>
+        </section>
+      </section> -->
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  <script src="Assets/JS/script.js"></script>
+</body>
+</html>
